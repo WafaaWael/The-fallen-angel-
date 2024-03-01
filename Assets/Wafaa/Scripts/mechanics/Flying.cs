@@ -44,7 +44,7 @@ public class Flying : MonoBehaviour
         isFly = true;
         float originalGravity = rigidbody.gravityScale;
         rigidbody.gravityScale = 0f;
-        rigidbody.velocity = new Vector2(transform.localScale.x * flyPower, 0.1F*transform.localScale.y*Mathf.Log(flyheight));
+        rigidbody.velocity = new Vector2(transform.localScale.x * flyPower, 0.1F* flyheight * Mathf.Log(transform.localScale.x));
         trilRenderer.emitting=true;
         yield return new WaitForSeconds(flyTime);
         rigidbody.gravityScale= originalGravity;
